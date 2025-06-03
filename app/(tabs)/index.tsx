@@ -171,7 +171,10 @@ export default function TelaPrincipal() {
         style={styles.categoriesContainer}
       >
         {categories.map((category, index) => (
-          <TouchableOpacity key={index} style={styles.categoryItem}>
+          <TouchableOpacity
+          onPress={() => router.navigate("/(tabs)/BuscaPorMedicamentos")}
+          
+          key={index} style={styles.categoryItem}>
             <Text style={styles.categoryText}>{category.icon}</Text>
             <Text style={styles.categoryText}>{category.titulo}</Text>
           </TouchableOpacity>
