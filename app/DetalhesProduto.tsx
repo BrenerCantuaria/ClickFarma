@@ -8,7 +8,7 @@ import {
   Text,
   View,
 } from "react-native";
-
+import { adicionarAoCarrinho } from "../utils/carrinho";
 interface Produto {
   id: number;
   nome: string;
@@ -31,22 +31,18 @@ export default function DetalhesProduto(Props: Produto) {
     }>();
 
   function adicionarCarrinho() {
+    adicionarAoCarrinho({
+      id,
+      nome,
+      preco: Number(preco),
+      imagem,
+      quantidade,
+      dosagem,
+      marca,
+    });
+
     Alert.alert("Produto adicionado ao carrinho");
   }
-
-  // Produto
-  const produto = {
-    id: 1,
-    nome: "Paracetamol 750mg",
-    categoria: "Analgésico/Antitérmico",
-    descricao: "Alívio de dores e febre. Cartela com 10 comprimidos.",
-    preco: 12.9,
-    marca: "Genérico",
-    imagem:
-      "https://images.unsplash.com/photo-1631980839248-1a84a60c66ac?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    dosagem: "750mg",
-    quantidade: "10 comprimidos",
-  };
 
   return (
     <ScrollView style={styles.container}>
