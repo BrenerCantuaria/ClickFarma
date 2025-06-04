@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Dimensions, Image, StyleSheet, View } from "react-native";
+import { Image, StyleSheet, View } from "react-native";
 
-const { width: screenWidth } = Dimensions.get("window");
 
 export default function Carrossel() {
   // Imagens de exemplo do Unsplash (substitua pelas suas URLs)
