@@ -8,16 +8,8 @@ import {
   Text,
   View,
 } from "react-native";
-import { adicionarAoCarrinho } from "../utils/carrinho";
-interface Produto {
-  id: number;
-  nome: string;
-  descricao: string;
-  preco: number;
-  imagem: string;
-}
 
-export default function DetalhesProduto(Props: Produto) {
+export default function DetalhesProduto() {
   const { id, nome, descricao, preco, imagem, quantidade, dosagem, marca } =
     useLocalSearchParams<{
       id: string;
@@ -31,26 +23,16 @@ export default function DetalhesProduto(Props: Produto) {
     }>();
 
   function adicionarCarrinho() {
-    adicionarAoCarrinho({
-      id,
-      nome,
-      preco: Number(preco),
-      imagem,
-      quantidade,
-      dosagem,
-      marca,
-    });
-
     Alert.alert("Produto adicionado ao carrinho");
   }
 
   return (
     <ScrollView style={styles.container}>
-      <View>
+      <View style={{backgroundColor: "#eeee"}}>
         <Image
           source={{ uri: imagem }}
           style={styles.productImage}
-          resizeMode="cover"
+          resizeMode="contain"
         />
       </View>
 
