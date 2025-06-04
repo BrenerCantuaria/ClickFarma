@@ -19,17 +19,17 @@ export default function TabLayout() {
       <Tabs.Screen
         name="BuscaPorMedicamentos"
         options={{
-          title: 'Busca',
+          title: 'Buscar',
           tabBarIcon: ({ color,size }) =>  <Feather name="search" size={size} color={color} />,
         }}
       />
-      <Tabs.Screen
+      {/* <Tabs.Screen
         name="Carrinho"
         options={{
           title: 'Carrinho',
           tabBarIcon: ({ color,size }) =>  <Feather name="shopping-cart" size={size} color={color} />,
         }}
-      />
+      /> */}
     </Tabs>
   );
 }
