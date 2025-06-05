@@ -1,7 +1,15 @@
 // src/screens/Auth/LoginScreen.tsx
 import { useRouter } from "expo-router";
 import React, { useState } from "react";
-import { Alert, Button, StyleSheet, Text, TextInput, View } from "react-native";
+import {
+  Alert,
+  Button,
+  Image,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
 export default function LoginScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -9,7 +17,7 @@ export default function LoginScreen() {
 
   const handleLogin = () => {
     // Validação fake - qualquer combinação funciona
-    if (email && password) {
+    if (email == "teste@gmail.com" && password == "12345") {
       // Navega para a tela Home (index.tsx)
       router.replace("/(tabs)");
     } else {
@@ -19,26 +27,44 @@ export default function LoginScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Login</Text>
+      <View>
+        <View
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+            margin: "auto",
+            borderRadius: 5,
+            width: 200,
+            height: 200,
+            marginBottom: 50,
+          }}
+        >
+          <Image
+            source={require("../assets/images/pills.png")}
+            style={{ width: "100%", height: "100%" }}
+            resizeMode="contain"
+          />
+          <Text style={styles.title}>ClickFarma</Text>
+        </View>
+        <TextInput
+          style={styles.input}
+          placeholder="Email"
+          value={email}
+          onChangeText={setEmail}
+          keyboardType="email-address"
+          autoCapitalize="none"
+        />
 
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        value={email}
-        onChangeText={setEmail}
-        keyboardType="email-address"
-        autoCapitalize="none"
-      />
+        <TextInput
+          style={styles.input}
+          placeholder="Senha"
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry
+        />
 
-      <TextInput
-        style={styles.input}
-        placeholder="Senha"
-        value={password}
-        onChangeText={setPassword}
-        secureTextEntry
-      />
-
-      <Button title="Entrar" onPress={handleLogin} />
+        <Button title="Entrar" onPress={handleLogin} />
+      </View>
     </View>
   );
 }
