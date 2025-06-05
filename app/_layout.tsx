@@ -29,11 +29,7 @@ export default function RootLayout() {
 
         {/* Telas autenticadas */}
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-
-        <Stack.Screen
-          name="Detalhes Produto"
-          options={{ title: "Detalhes", headerShown: true }}
-        />
+        
         {/* Rota 404 */}
         <Stack.Screen name="+not-found" />
       </Stack>
