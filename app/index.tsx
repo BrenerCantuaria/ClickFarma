@@ -9,7 +9,7 @@ export default function LoginScreen() {
 
   const handleLogin = () => {
     // Validação fake - qualquer combinação funciona
-    if (email && password) {
+    if (email == "usuario" && password == "12345") {
       // Navega para a tela Home (index.tsx)
       router.replace("/(tabs)");
     } else {
