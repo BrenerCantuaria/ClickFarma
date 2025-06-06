@@ -40,7 +40,7 @@ export default function LoginScreen() {
           }}
         >
           <Image
-            source={require("../assets/images/pills.png")}
+            source={require("../../assets/images/pills.png")}
             style={{ width: "100%", height: "100%" }}
             resizeMode="contain"
           />
