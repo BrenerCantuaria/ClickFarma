@@ -24,9 +24,7 @@ O aplicativo possui as seguintes telas principais:
 ## 🚀 Tecnologias Utilizadas
 
 - [React Native](https://reactnative.dev/)
-- [React Navigation](https://reactnavigation.org/)
-- [Axios](https://axios-http.com/) (para requisições HTTP)
-- [Context API](https://reactjs.org/docs/context.html) (para gerenciamento de estado global)
+- [Expo Navigation](https://docs.expo.dev/router/basics/navigation/)
 
 ## 🛠️ Instalação
 
