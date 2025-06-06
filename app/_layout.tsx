@@ -6,10 +6,8 @@ export default function RootLayout() {
   return (
     <>
       <Stack>
-        {/* Tela inicial (login) - agora como index */}
         <Stack.Screen name="index" options={{ headerShown: false }} />
-
-        {/* Telas autenticadas */}
+        
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
 
         <Stack.Screen

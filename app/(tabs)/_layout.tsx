@@ -23,13 +23,6 @@ export default function TabLayout() {
           tabBarIcon: ({ color,size }) =>  <Feather name="search" size={size} color={color} />,
         }}
       />
-      {/* <Tabs.Screen
-        name="Carrinho"
-        options={{
-          title: 'Carrinho',
-          tabBarIcon: ({ color,size }) =>  <Feather name="shopping-cart" size={size} color={color} />,
-        }}
-      /> */}
     </Tabs>
   );
 }

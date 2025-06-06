@@ -2,15 +2,15 @@
 import { useRouter } from "expo-router";
 import React, { useState } from "react";
 import { Alert, Button, StyleSheet, Text, TextInput, View } from "react-native";
+
+
 export default function LoginScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
 
   const handleLogin = () => {
-    // Validação fake - qualquer combinação funciona
     if (email == "usuario" && password == "12345") {
-      // Navega para a tela Home (index.tsx)
       router.replace("/(tabs)");
     } else {
       Alert.alert("Erro", "Por favor, preencha todos os campos");
@@ -27,7 +27,6 @@ export default function LoginScreen() {
         value={email}
         onChangeText={setEmail}
         keyboardType="email-address"
-        autoCapitalize="none"
       />
 
       <TextInput
