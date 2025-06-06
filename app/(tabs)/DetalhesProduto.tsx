@@ -36,7 +36,6 @@ export default function DetalhesProduto(Props: Produto) {
       nome,
       preco: Number(preco),
       imagem,
-      quantidade,
       dosagem,
       marca,
     });
