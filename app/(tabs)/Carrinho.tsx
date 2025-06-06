@@ -33,39 +33,47 @@ export default function Carrinho() {
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.title}>Carrinho de Compras</Text>
-      {produtos.map((produto) => (
-        <View key={produto.id} style={styles.item}>
-          <TouchableOpacity
-            onPress={() =>
-              router.push({
-                pathname: "/DetalhesProduto",
-                params: {
-                  id: produto.id.toString(),
-                  nome: produto.nome,
-                  preco: produto.preco.toString(),
-                  imagem: produto.imagem,
-                  quantidade: produto.quantidade,
-                  dosagem: produto.dosagem,
-                  marca: produto.marca,
-                },
-              })
-            }
-          >
-            <Image source={{ uri: produto.imagem }} style={styles.image} />
-          </TouchableOpacity>
-
-          <View style={styles.info}>
-            <Text style={styles.name}>{produto.nome}</Text>
-            <Text style={styles.details}>R$ {produto.preco.toFixed(2)}</Text>
-            <Text style={styles.details}>
-              {produto.quantidade} - {produto.dosagem}
-            </Text>
-            <TouchableOpacity onPress={() => handleRemover(produto.id)}>
-              <Text style={styles.remove}>Remover</Text>
-            </TouchableOpacity>
-          </View>
+      {produtos.length == 0 ? (
+        <View>
+          <Text>Seu carrinho está vazio</Text>
         </View>
-      ))}
+      ) : (
+        produtos.map((produto) => (
+          <View key={produto.id} style={styles.item}>
+            <TouchableOpacity
+              onPress={() =>
+                router.push({
+                  pathname: "/DetalhesProduto",
+                  params: {
+                    id: produto.id.toString(),
+                    nome: produto.nome,
+                    preco: produto.preco.toString(),
+                    imagem: produto.imagem,
+                    quantidade: produto.quantidade,
+                    dosagem: produto.dosagem,
+                    marca: produto.marca,
+                  },
+                })
+              }
+            >
+              <Image source={{ uri: produto.imagem }} style={styles.image} />
+            </TouchableOpacity>
+
+            <View style={styles.info}>
+              <Text style={styles.name}>{produto.nome}</Text>
+              <Text style={styles.details}>R$ {produto.preco.toFixed(2)}</Text>
+              <TouchableOpacity onPress={() => handleRemover(produto.id)}>
+                <Text style={styles.remove}>Remover</Text>
+              </TouchableOpacity>
+            </View>
+            <View>
+              <Text style={styles.details}>
+                Quantidade: {produto.quantidade}
+              </Text>
+            </View>
+          </View>
+        ))
+      )}
     </ScrollView>
   );
 }
@@ -87,6 +95,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "#eee",
     paddingBottom: 8,
+    alignItems: "center"
   },
   image: {
     width: 80,
