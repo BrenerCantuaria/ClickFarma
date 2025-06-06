@@ -37,6 +37,15 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="Perfil"
+        options={{
+          title: "Perfil",
+          tabBarIcon: ({ color, size }) => (
+            <Feather name="user" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="DetalhesProduto"
         options={{
           href: null, // impede que apareça na tab bar
