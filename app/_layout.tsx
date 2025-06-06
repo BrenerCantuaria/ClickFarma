@@ -25,11 +25,11 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack>
         {/* Tela inicial (login) - agora como index */}
-        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="(auth)/index" options={{ headerShown: false }} />
 
         {/* Telas autenticadas */}
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        
+
         {/* Rota 404 */}
         <Stack.Screen name="+not-found" />
       </Stack>
